@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="wrapper">
@@ -21,9 +25,15 @@
             <a href="#" class="header__logo">
               <img src="img/logo.png" alt="flowers" />
             </a>
-            <div class="header__auth">
+            <div class="header__auth" id="headerAUTH">
               <a class="btn btn_link" href="#">Sign up</a>
               <a class="btn btn_primary" href="#">Sign in</a>
+              <span class="material-icons" id="close" onclick="navToggle()">
+                close
+              </span>
+            </div>
+            <div class="header__burger">
+              <span class="material-icons" onclick="navToggle()"> menu </span>
             </div>
           </header>
           <div class="brand">
@@ -134,9 +144,7 @@
             <div class="shop-text__text">
               Get your favourites plant on our shop now
             </div>
-            <div class="shop-text__btn btn">
-              <a class="shop-text__btn" href="#">Visit Shop</a>
-            </div>
+            <a class="btn shop-text__btn" href="#">Visit Shop</a>
           </div>
           <div class="shop-photo">
             <img src="img/photo/big.png" alt="photo big" />
@@ -144,5 +152,6 @@
         </section>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

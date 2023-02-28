@@ -31,13 +31,28 @@ p {
   align-items: center;
   justify-content: space-between;
 }
+.header__logo img {
+  animation: rotate 3s forwards infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
 .btn {
   border: 0;
   display: inline-block;
   padding: 8px 20px;
   width: 111px;
   height: 36px;
-  font-family: "Nunito" sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
@@ -51,6 +66,19 @@ p {
 .btn_primary {
   background: #156963;
 }
+
+.btn:hover {
+  color: #022517;
+}
+
+.header__auth .material-icons {
+  display: none;
+}
+.header__burger {
+  display: none;
+  color: #156963;
+}
+
 .main-section {
   min-height: 100vh;
   display: flex;
@@ -139,7 +167,15 @@ p {
 .plant-card {
   display: grid;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  transition: 0.2s all ease-in-out;
+}
+.plant-card:hover {
+  transform: translate(10px);
+  transform: scale(1.2);
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
 }
 
 .plant-card__photo {
@@ -186,17 +222,8 @@ p {
 }
 
 .shop-text__btn {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 152px;
-  height: 40px;
   background: #156963;
   font-weight: 700;
-  font-size: 14px;
-  line-height: 20px;
-  text-align: center;
   color: #fafefe;
 }
 img {
@@ -241,5 +268,52 @@ img {
   }
   shop-section {
     padding: 10px 10px 0 10px;
+  }
+
+  .header__auth {
+    z-index: 99;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    background: #156963;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    transition: 0.2s all ease-in-out;
+    transform: translateX(120%);
+  }
+  .header__auth._active {
+    transform: translateX(0);
+  }
+  .header__auth .material-icons {
+    display: inline-block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: #ffffff;
+  }
+  .header__burger {
+    display: inline-block;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+  }
+  .header__a {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .btn_link {
+    color: white;
+  }
+
+  .btn {
+    font-size: 20px;
+    line-height: 30px;
   }
 }
